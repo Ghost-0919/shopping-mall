@@ -4,6 +4,8 @@ import Login from './components/Login.vue'
 import Home from './components/Home.vue'
 import Welcome from './components/Welcome.vue'
 import Users from './components/user/Users.vue'
+import Rights from './components/power/Rights.vue'
+import Roles from './components/power/Roles.vue'
 Vue.use(Router)
 
 const router = new Router({
@@ -11,10 +13,17 @@ const router = new Router({
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
     {
-      path: '/home', component: Home,redirect:'/welcome', children: [ //redirect旅游重定向到welcome页面
-        { path: '/welcome', component: Welcome },//home下面的子路由 /welcome
-        {path:'/users',component:Users}
-    ]},
+      path: '/home',
+      component: Home,
+      redirect: '/welcome',
+      children: [
+        //redirect旅游重定向到welcome页面
+        { path: '/welcome', component: Welcome }, //home下面的子路由 /welcome
+        { path: '/users', component: Users },
+        { path: '/rights', component: Rights },
+        { path: '/roles', component: Roles }
+      ]
+    }
   ]
 })
 
