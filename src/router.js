@@ -2,14 +2,19 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './components/Login.vue'
 import Home from './components/Home.vue'
-
+import Welcome from './components/Welcome.vue'
+import Users from './components/user/Users.vue'
 Vue.use(Router)
 
 const router = new Router({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
-    { path: '/home', component: Home }
+    {
+      path: '/home', component: Home,redirect:'/welcome', children: [ //redirect旅游重定向到welcome页面
+        { path: '/welcome', component: Welcome },//home下面的子路由 /welcome
+        {path:'/users',component:Users}
+    ]},
   ]
 })
 
