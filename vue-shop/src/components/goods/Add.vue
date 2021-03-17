@@ -280,14 +280,12 @@ export default {
         },
         //处理移除图片操作
         handleRemove(file) {
-            console.log(file)
             //1.获取将要删除的图片的临时路径
             const filePath = file.response.data.tmp_path
             //2.从 pics 数组中，找到这个图片对应的索引值
             const i = this.addForm.pics.findIndex((x) => x.pic === filePath)
             //3.调用数组的splice方法，把图片信息对象，从pics数组中移除
             this.addForm.pics.splice(i, 1)
-            console.log(this.addForm)
         },
         //监听图片上传成功事件
         handleSuccess(response) {
@@ -295,7 +293,6 @@ export default {
             const picInfo = { pic: response.data.tmp_path }
             //2.将图片信息对象 push刀pics数组中
             this.addForm.pics.push(picInfo)
-            console.log(this.addForm)
         },
         //添加商品按钮
         add() {

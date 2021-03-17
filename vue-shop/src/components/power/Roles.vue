@@ -412,8 +412,6 @@ export default {
         //点击按钮添加新角色
         addRolesConfirm() {
             this.$refs.addRolesRef.validate(async (valid) => {
-                console.log(valid)
-
                 if (!valid) return
 
                 //可以发起添加角色网络请求

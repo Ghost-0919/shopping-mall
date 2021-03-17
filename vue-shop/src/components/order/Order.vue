@@ -61,7 +61,7 @@
                     }}</template></el-table-column
                 >
                 <el-table-column label="操作" width="150px">
-                    <template slot-scope="scope">
+                    <template>
                         <el-button
                             type="primary"
                             icon="el-icon-edit"
@@ -178,7 +178,6 @@ export default {
             }
             this.total = res.data.total
             this.orderlist = res.data.goods
-            console.log(res.data)
         },
         handleSizeChange(newSizi) {
             this.queryInfo.pagesize = newSizi
@@ -195,9 +194,7 @@ export default {
         addressDialogClose() {
             this.$refs.addressFormRef.resetFields()
         },
-        async showProgressBox() {
-            console.log('暂无该功能')
-        },
+        async showProgressBox() {},
     },
 }
 </script>

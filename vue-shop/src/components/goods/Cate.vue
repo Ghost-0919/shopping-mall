@@ -328,7 +328,6 @@ export default {
             if (confirmResult !== 'confirm') {
                 return this.$message.info('取消删除用户')
             }
-            console.log(id)
             const { data: res } = await this.$http.delete('categories/' + id)
             if (res.meta.status !== 200) {
                 return this.$message.error('删除分类失败！')
@@ -353,7 +352,6 @@ export default {
                     cat_name: this.addCateForm.cat_name,
                 }
             )
-            console.log(this.addCateForm.cat_pid)
             if (res.meta.status !== 200) {
                 return this.$message.error('更新分类失败！')
             }
